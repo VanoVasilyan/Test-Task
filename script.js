@@ -211,7 +211,7 @@ for (let i = 0; i < receivedData.length; i++) {
 
     for (const item of contextMenuItems) {
         const btn = document.createElement('button');
-        btn.innerHTML = item.title;
+        btn.innerText = item.title;
         contextMenu.appendChild(btn);
         btn.onclick = () => contextMenuClick(item);
     }
@@ -219,10 +219,10 @@ for (let i = 0; i < receivedData.length; i++) {
     topSide.id = 'topSide';
     itemNum.id = 'itemNumber';
     threeDots.id = 'threeDots';
-    itemNum.innerHTML = i + 1;
-    threeDots.innerHTML = '. . .';
+    itemNum.setHTML(i + 1);
+    threeDots.innerText = '. . .';
     newItem.style.background = receivedData[i].backgroundColor;
-    elementText.innerHTML = receivedData[i].elementText;
+    elementText.innerText = receivedData[i].elementText;
 
     threeDots.onclick = () => {
         if (contextMenu.style.display === 'none') {
@@ -240,7 +240,7 @@ for (let i = 0; i < receivedData.length; i++) {
     elementList.appendChild(newItem);
 }
 
-addElement.innerHTML = '<span>+</span>' + ' ' + 'Добавить<br> элемент';
+addElement.setHTML('<span>+</span>' + ' ' + 'Добавить<br> элемент');
 addElement.id = 'addElementBtn';
 elementList.appendChild(addElement);
 addElement.onclick = () => sendRequest();
